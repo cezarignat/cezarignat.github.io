@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My New website!</title>
+
+	<style>
+		html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background-color: #fff; }
+
+		#terminal-container {
+			padding-top: 10vh;
+			width: 100vw;
+			height: 100vh;
+
+			background-color: #fff;
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			
+			transition: transform 1.3s, bottom 1.3s;
+		}
+
+		div#terminal-container:before {
+			content: '';
+			position: absolute;
+			background-size: cover;
+			background-position: center center;
+			top: -20%;
+			left: -20%;
+			right: -20%;
+			bottom: -20%;
+			background-image: url(laptop.png);
+			overflow: visible;
+		}
+
+		#terminal {
+			width: 80%;
+			height: 80%;
+			max-width: 700px;
+			border-radius: 15px;
+			margin: auto;
+			color: #fff;
+
+			background-color: #fff;
+
+			-webkit-box-shadow: -27.1px 62.5px 125px -25px rgba(50,50,93,.5), -16.2px 37.5px 75px -37.5px rgba(0,0,0,.6);
+			box-shadow: -27.1px 62.5px 125px -25px rgba(50,50,93,.5), -16.2px 37.5px 75px -37.5px rgba(0,0,0,.6);
+			background: #32325d;
+		}
+
+		#terminal-container.start {
+			transform: scale(0.4);
+		}
+
+		#content {
+			font-family: 'Consolas', 'Courier New', monospace;
+			padding: 4%;
+		}
+
+		#content-strings {
+			display: none;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		#me {
+			width: 80%;
+			max-width: 650px;
+			margin: auto;
+			margin-bottom: 30px;
+
+			opacity: 0;
+			transition: opacity 1s;
+		}
+
+		#me.start {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="me">
+		<h1>Cezar Ignat</h1>
+		<p>
+			<strong>IT Consultant specialised in all things web. From development to arhitecture, from small companies to enterprise, from landing pages to full blown applications.</strong>
+		</p>
+		<p class="text-center">
+			<a href="#" id="contact">Contact Me</a>
+		</p>
+	</div>
+
+	<div id="terminal-container">
+		<div id="terminal">
+			<div id="content">
+				<span id="typed-content"></span>
+			</div>
+		</div>
+	</div>
+	
+	<script src="typed.min.js"></script>
+	<script>
+		var typed = new Typed('#typed-content', {
+		  strings: [
+		  		"`cezar@production:~$` ^1000service cezarignat start <br>^1000 `"+
+				"Authentication is required to start 'cezarignat.service'. "+
+				"<br> cezar@production:~$ ` ^1500 sudo service cezarignat start"
+		  ],
+		  loop: false,
+		  typeSpeed: 30,
+		  onComplete: function() {
+		  
+		  	setTimeout(function() {
+		  		document.getElementById('terminal-container').className = 'start';
+		  	}, 800);
+
+		  	setTimeout(function() {
+		  		document.getElementById('me').className = 'start';
+		  	}, 2300);
+		  }
+		});
+	</script>
+</body>
+</html>
