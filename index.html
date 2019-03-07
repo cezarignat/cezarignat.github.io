@@ -1,166 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name=viewport content="width=device-width, initial-scale=1">
-<title>Cezar M. Ignat - Design, Web &amp; Photography</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-<link rel="manifest" href="/favicons/site.webmanifest">
-<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/favicons/favicon.ico">
-<meta name="msapplication-TileColor" content="#ffc600">
-<meta name="msapplication-config" content="/favicons/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
-<meta name="description" content="Cezar Ignat is a digital designer, web developer and photographer, offering a wide range of digital marketing solutions.">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="3 month">
-<meta name='profitshareid' content='8d74b5be751f169d5e962dca4a7bc341' />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta property="og:title" content="Cezar M. Ignat - Design, Web &amp; Photography">
-<meta property="og:description" content="Cezar Ignat is a digital designer, web developer and photographer, offering a wide range of digital marketing solutions.">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://cezarignat.com">
-<meta property="og:image" content="https://cezarignat.com/fb.png">
+	<title>My New website!</title>
 
-<meta property="fb:admins" content="100000754549694">
-<meta property="profile:first_name" content="Cezar">
-<meta property="profile:gender" content="male">
-<meta property="profile:last_name" content="Ignat">
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@cezarignat"/>
-<meta name="twitter:creator" content="@cezarignat"/>
-<meta name="twitter:image" content="https://cezarignat.com/twt.png">
-
-<style>
-	body, html {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
-
-		background: #ff9966; 
-		background: -webkit-linear-gradient(to top, #ff5e62, #ff9966); 
-		background: linear-gradient(to top, #ff5e62, #ff9966); 
-	}
-
-	#wrapper {
-		
-		display: table;
-		width: 100%;
-		height: 100%;
-	}
-
-	.aligner {
-		display: table-cell;
-		height: 100%;
-		width: 100%;
-		vertical-align: middle;
-	}
-
-	.container {
-		max-width: 667px;
-		padding: 30px;
-		margin: auto;
-
-	}
-
-	h1 {
-		font-family: 'Georgia', serif;
-		font-size: 6em;
-		margin: 0;
-	}
-
-	h2 {
-		font-size: 2em;
-		font-weight: normal;
-		padding-left: 5px;
-		position: relative;
-		top: -10px;
-	}
-
-	p {
-		font-size: 1.2em;
-	    line-height: 1.8;
-	}
-
-	strong {
-	    background-color: #000;
-	    color: #fff;
-	    padding: 2px 10px;
-	}
-
-	img {
-		display: block;
-		max-width: 80px;
-		position: absolute;
-		right: 20px;
-		bottom: 20px;
-	}
-
-	@media screen and (max-width: 800px) {
-		img {
-			position: static;
-			margin: auto;
-			padding-top: 20px;
-			padding-bottom: 20px;
-		}
+	<style>
+		html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background-color: #fff; }
 
 		body {
-			font-size: 10px;
+			font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
 		}
 
 		h1 {
-			font-size: 4em;
-			white-space: nowrap;
+			font-weight: 100;
+			text-align: center;
+			font-size: 2em;
+			margin-top: 1em;
+			font-weight: bold;
 		}
 
-		strong {
-			display: inline-block;
+		@media (min-height: 850px) {
+			h1 {
+				font-size: 3em;
+			}
 		}
-	}
-</style>
 
-<!-- Start Google Analytics -->
-<script>
-	!function(c,e,z,a,r){c.GoogleAnalyticsObject=z;c[z]||(c[z]=function(){
-	  (c[z].q=c[z].q||[]).push(arguments)});c[z].l=+new Date;a=e.createElement('script');
-	  r=e.scripts[0];a.src='//www.google-analytics.com/analytics.js';
-	  r.parentNode.insertBefore(a,r)}(window,document,'ga');
+		#terminal-container {
+			padding-top: 10vh;
+			width: 100vw;
+			height: 100vh;
+			/* background-color: #fffefa; */
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			transition: transform 1.3s, bottom 1.3s;
+		}
 
-	ga('create', 'UA-63379078-1', 'auto');
-	ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
+		.portrait #terminal-container {
+			height: 50vh;
+		}
+
+		#terminal-container img {
+		    position: absolute;
+		    width: 150%;
+		    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+		    left: 50%; /* position the left edge of the element at the middle of the parent */
+		    transform: translate(-50%, -50%);
+		    opacity: 0;
+		    transition: opacity 0.4s;
+		}
+
+		#terminal {
+			width: 80%;
+			height: 80%;
+			/* max-width: 700px; */
+			border-radius: 15px;
+			margin: auto;
+			color: #fff;
+			background-color: #fff;
+			-webkit-box-shadow: -27.1px 62.5px 125px -25px rgba(50,50,93,.5), -16.2px 37.5px 75px -37.5px rgba(0,0,0,.6);
+			box-shadow: -27.1px 62.5px 125px -25px rgba(50,50,93,.5), -16.2px 37.5px 75px -37.5px rgba(0,0,0,.6);
+			background: #32325d;
+		}
+
+		#terminal-container.start {
+			transform: translate(0, 200px) scale(0.3);
+		}
+
+		#terminal-container.start img {
+			opacity: 1;
+		}
+
+		.portrait #terminal-container img {
+			width: auto;
+			height: 150%;
+		}
+
+		@media (max-height: 500px) {
+			#terminal-container.start {
+			    transform: translate(0, 150px) scale(0.3);
+			}
+		}
+
+		#content {
+			font-family: 'Consolas', 'Courier New', monospace;
+			padding: 4%;
+		}
+
+		#content-strings {
+			display: none;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		#me {
+			width: 80%;
+			max-width: 650px;
+			margin: auto;
+			margin-bottom: 30px;
+
+			opacity: 0;
+			transition: opacity 1s;
+		}
+
+		#me.start {
+			opacity: 1;
+		}
+	</style>
 </head>
-<body>
+<body class="" onresize="getRatio()">
+	
+	<div id="me">
+		<h1>CEZAR IGNAT</h1>
+		<p>
+			IT Consultant specialised in all things web. From development to arhitecture, from small companies to enterprise, from landing pages to full blown applications.
+		</p>
+		<p class="text-center">
+			<strong>contact@cezarignat.com</strong>
+		</p>
+	</div>
 
-
-	<div id="wrapper">
-		<div class="aligner">
-			<div class="container">
-				<h1>Cezar Ignat</h1>
-				<!-- <h2>IT Consultant </h2> -->
-				<p>
-					An IT Consultant specialised in <strong>architecture and modernisation</strong>. 
-				</p>
-				<p>
-					I've helped hundreds of clients reach new milestones in deliverability and efficiency, with no compromise to their <strong>cybersecurity</strong> or <strong>work-flow</strong>. 
-				</p>
-				<p>
-					Send me a message at <strong>contact@cezarignat.com</strong>.
-				</p>
-				<p>
-					<img src="ms.svg" alt="Cezar Ignat">
-				</p>
+	<div id="terminal-container">
+		<img src="laptop.png" alt="Laptop Cezar Ignat">
+		<div id="terminal">
+			<div id="content">
+				<span id="typed-content"></span>
 			</div>
 		</div>
 	</div>
 
+	<script>
+		function getRatio() {
+			var ratio = window.outerWidth / window.outerHeight;
+			
+			if(ratio <= 1) {
+				document.getElementsByTagName('body')[0].className = 'portrait';
+			}
+		}
 
+		getRatio();
 
+		var supportsOrientationChange = "onorientationchange" in window,
+		    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+		window.addEventListener(orientationEvent, function() {
+		    getRatio();
+		}, false);
+	</script>
+	
+	<script src="typed.min.js"></script>
+	<script>
+		var typed = new Typed('#typed-content', {
+		  strings: [
+		  		"`cezar@production:~$` ^1000service cezarignat start <br>^1000 `"+
+				"Authentication is required to start 'cezarignat.service'. "+
+				"<br> cezar@production:~$ ` ^1500 sudo service cezarignat start"
+		  ],
+		  loop: false,
+		  typeSpeed: 30,
+		  onComplete: function() {
+		  
+		  	setTimeout(function() {
+		  		document.getElementById('terminal-container').className = 'start';
+		  	}, 800);
+
+		  	setTimeout(function() {
+		  		document.getElementById('me').className = 'start';
+		  	}, 2300);
+		  }
+		});
+	</script>
 </body>
 </html>
