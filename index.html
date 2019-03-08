@@ -169,8 +169,18 @@
 	</div>
 
 	<script>
+		function viewport() {
+			var e = window
+			, a = 'inner';
+			if ( !( 'innerWidth' in window ) ) {
+				a = 'client';
+				e = document.documentElement || document.body;
+			}
+			return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
+		}
+		
 		function getRatio() {
-			var ratio = window.outerWidth / window.outerHeight;
+			var ratio = viewport().width / viewport().height;
 			
 			if(ratio <= 1) {
 				document.getElementsByTagName('body')[0].className = 'portrait';
@@ -178,7 +188,7 @@
 				document.getElementsByTagName('body')[0].className = '';
 			}
 
-			var the_remaining_height = window.outerHeight - document.getElementById('me').clientHeight - (document.getElementsByTagName('img')[0].clientHeight * 0.3);
+			var the_remaining_height = viewport().height - document.getElementById('me').clientHeight - (document.getElementsByTagName('img')[0].clientHeight * 0.3);
 
 			if ((the_remaining_height / 2) > 0) {
 				document.getElementsByTagName('h1')[0].style.marginTop = (the_remaining_height/2) + 'px';
